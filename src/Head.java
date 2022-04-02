@@ -35,7 +35,8 @@ public class Head {
         });
         get("/login", new Route() {
             public Object handle(Request request, Response response) throws Exception {
-                String user = request.queryParams("username"); //get user
+
+                String user = request.queryParams("name"); //get user
                 String pass = request.queryParams("password"); //get pass
                 DB db = new DB();
                 db.Auth(user,pass);
@@ -46,10 +47,11 @@ public class Head {
                 return true;
             }
         });
-
-
+        //http://localhost:8088/login?name=Vishwamalyan&password=test
         //http://localhost:8088/SOS?ID=00000001
-        //http://localhost:3306/SOS?ID=00000001
+
+
+
         get("/SOS", new Route() {
 
             public Object handle (Request request, Response response) throws Exception {

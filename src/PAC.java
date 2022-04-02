@@ -6,7 +6,7 @@ public class PAC {
 
 
     public int authenticate(String user, String pass){
-        if(this.username == user && this.password == pass){
+        if(this.username.equals(user) && this.password.equals(pass)){
             return 1;
         }
         else{
